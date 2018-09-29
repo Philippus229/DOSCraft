@@ -35,26 +35,26 @@ double my_cos(double x) {
 int initDone = 0;
 
 int main() {
-    int gd=DETECT, gm, errorcode;
-    initgraph(&gd,&gm,"c:\\turboc3\\bgi");
-    errorcode = graphresult();
-    if (errorcode != grOk) {
-        printf("Graphics error: %s\n", grapherrormsg(errorcode));
-        printf("Press any key to halt:");
-        getch();
-        exit(1);
-    }
+	int gd=DETECT, gm, errorcode;
+	initgraph(&gd,&gm,"c:\\turboc3\\bgi");
+	errorcode = graphresult();
+	if (errorcode != grOk) {
+		printf("Graphics error: %s\n", grapherrormsg(errorcode));
+		printf("Press any key to halt:");
+		getch();
+		exit(1);
+	}
 	while(1) {
 		int key;
 		//char key;
 		if(initDone == 1) {
-		    key = bioskey(0);
+			key = bioskey(0);
 			//key = getch();
-    	    if((key & 0x00FF) > 0) {
-    	        key = key & 0x00FF;
-    	    } else {
-    	        key = (key & 0xFF00) >> 8;
-		    }
+			if((key & 0x00FF) > 0) {
+				key = key & 0x00FF;
+			} else {
+				key = (key & 0xFF00) >> 8;
+			}
 		} else {
 			initDone = 1;
 		}
@@ -73,10 +73,10 @@ int main() {
 				camRot[1] += 1;
 		}
 		if(key == ARROW_UP) {
-			    camRot[0] += 1;
+				camRot[0] += 1;
 		}
 		if(key == ARROW_DOWN) {
-			    camRot[0] -= 1;
+				camRot[0] -= 1;
 		}
 		if(camRot[1] > 360) {
 			camRot[1] -= 360;
@@ -139,9 +139,9 @@ int main() {
 					pTmp[2] = block_tmp[2];
 				}
 				double blockPosXRTC = ((my_cos(camRot[1])*(pTmp[0]-camPos[0]))-(my_sin(camRot[1])*(pTmp[2]-camPos[2])));
-	            double blockPosZRTC = ((my_cos(camRot[1])*(pTmp[2]-camPos[2]))+(my_sin(camRot[1])*(pTmp[0]-camPos[0])));
-	            double blockPosYRTC = -((my_cos(camRot[0])*(pTmp[1]-camPos[1]))-(my_sin(camRot[0])*blockPosZRTC));
-	            blockPosZRTC = ((my_cos(camRot[0])*blockPosZRTC)+(my_sin(camRot[0])*(pTmp[1]-camPos[1])));
+				double blockPosZRTC = ((my_cos(camRot[1])*(pTmp[2]-camPos[2]))+(my_sin(camRot[1])*(pTmp[0]-camPos[0])));
+				double blockPosYRTC = -((my_cos(camRot[0])*(pTmp[1]-camPos[1]))-(my_sin(camRot[0])*blockPosZRTC));
+				blockPosZRTC = ((my_cos(camRot[0])*blockPosZRTC)+(my_sin(camRot[0])*(pTmp[1]-camPos[1])));
 				if (i2 == 0) {
 					p0[0] = blockPosXRTC;
 					p0[1] = blockPosYRTC;
