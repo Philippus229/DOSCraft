@@ -59,24 +59,24 @@ int main() {
 			initDone = 1;
 		}
 		if(key == KEY_W) {
-				camPos[0] += (my_sin(camRot[1])*0.05);
-				camPos[2] += (my_cos(camRot[1])*0.05);
+			camPos[0] += (my_sin(camRot[1])*0.05);
+			camPos[2] += (my_cos(camRot[1])*0.05);
 		}
 		if(key == KEY_S) {
-				camPos[0] -= (my_sin(camRot[1])*0.05);
-				camPos[2] -= (my_cos(camRot[1])*0.05);
+			camPos[0] -= (my_sin(camRot[1])*0.05);
+			camPos[2] -= (my_cos(camRot[1])*0.05);
 		}
 		if(key == ARROW_LEFT) {
-				camRot[1] -= 1;
+			camRot[1] -= 1;
 		}
 		if(key == ARROW_RIGHT) {
-				camRot[1] += 1;
+			camRot[1] += 1;
 		}
 		if(key == ARROW_UP) {
-				camRot[0] += 1;
+			camRot[0] += 1;
 		}
 		if(key == ARROW_DOWN) {
-				camRot[0] -= 1;
+			camRot[0] -= 1;
 		}
 		if(camRot[1] > 360) {
 			camRot[1] -= 360;
